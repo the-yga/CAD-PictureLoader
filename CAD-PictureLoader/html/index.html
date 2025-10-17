@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Viewer</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: rgba(0,0,0,0.75);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      transition: background-color 0.3s ease;
+      animation: fadeInBody 0.3s ease forwards;
+    }
+
+    #viewer {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 15px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.8);
+      display: none;
+      opacity: 0;
+      transform: scale(0.95);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    #viewer.show {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    @keyframes fadeInBody {
+      from { background-color: rgba(0,0,0,0); }
+      to   { background-color: rgba(0,0,0,0.75); }
+    }
+  </style>
+</head>
+<body>
+  <img id="viewer" src="" alt="Image Viewer" />
+  <script src="script.js"></script>
+</body>
+</html>
